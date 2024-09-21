@@ -1,0 +1,7 @@
+
+/carrera/__pycache__
+/carrera/migrations
+/disponibilidad/__pycache__
+/disponibilidad/migrations
+/tutorias/__pycache__
+db.sqlite3
