@@ -18,6 +18,5 @@ class asignatura(models.Model):
     nombre_asignatura = models.CharField(max_length=100)
     id_carrera = models.ForeignKey(carrera, on_delete=models.PROTECT,  null=False)
     id_ciclo = models.ForeignKey(ciclo, on_delete=models.PROTECT,   null=False)
-
     def __str__(self): 
         return f'{self.id_asignatura} - {self.nombre_asignatura} - {self.id_carrera} - {self.id_ciclo}'
