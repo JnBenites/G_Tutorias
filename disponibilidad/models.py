@@ -18,7 +18,7 @@ class estudiante(models.Model):
 class disponibilidad(models.Model):
     id_disponibilidad = models.AutoField(primary_key=True)
     id_asignatura = models.ForeignKey(asignatura, on_delete=models.PROTECT, null=False)
-    id_carrera = models.ForeignKey(carrera, on_delete=models.PROTECT, null=False)
+    id_carrera = models.ManyToManyField(carrera)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     rango_hora_inicio = models.TimeField()
@@ -51,6 +51,8 @@ class solicitud(models.Model):
     id_estudiante = models.ForeignKey(estudiante, on_delete=models.PROTECT, null=False)
     id_disponibilidad = models.ForeignKey(disponibilidad, on_delete=models.PROTECT, null=False)
     id_estado = models.ForeignKey(estado_solicitud, on_delete=models.PROTECT, null=False)
+    fecha_solicitud = models.DateField(null=True, blank=True)
+    fecha_contestacion  =  models.DateField(null=True, blank=True)
+
     def __str__(self):
         return f'{self.id_solicitud} - {self.id_estudiante} - {self.id_disponibilidad} - {self.id_estado}'
-

@@ -16,7 +16,7 @@ class ciclo(models.Model):
 class asignatura(models.Model):
     id_asignatura = models.AutoField(primary_key=True)
     nombre_asignatura = models.CharField(max_length=100)
-    id_carrera = models.ManyToManyField(carrera)
+    id_carrera = models.ForeignKey(carrera, on_delete=models.PROTECT, null=False)
     id_ciclo = models.ForeignKey(ciclo, on_delete=models.PROTECT,   null=False)
     def __str__(self): 
         return f'{self.id_asignatura} - {self.nombre_asignatura} - {self.id_ciclo}'
