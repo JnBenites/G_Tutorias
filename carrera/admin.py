@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import carrera, ciclo,asignatura
+from .models import carrera, ciclo
 # Register your models here.
 admin.site.register(carrera)
 admin.site.register(ciclo)
-admin.site.register(asignatura)
+
